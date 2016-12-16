@@ -1,0 +1,94 @@
+    ul {
+      list-style-type: none;
+    }
+
+    .main-container .title {
+      text-align: center;
+    }
+
+    .main-container .wrapper {
+      width: 50%;
+      overflow: hidden;
+      height: 700px;
+      position: relative;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .main-container .wrapper .circles {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+
+    .main-container .wrapper #big-circle {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: #000;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      border-radius: 100%;
+      border: 6px dotted red;
+      box-sizing: border-box;
+    }
+
+    .main-container .wrapper .dots {
+      list-style-type: none;
+      position: absolute;
+      width: 100%;
+      height: 20%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-container .wrapper .circles:nth-of-type(1) .dots {
+      bottom: 0;
+      border: 1px solid #00f;
+    }
+
+    .main-container .wrapper .dot {
+      background: #000;
+      width: 17px;
+      height: 17px;
+      border-radius: 100%;
+      box-sizing: border-box;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      margin: 0 auto;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+
+    #circle-container {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+
+    #circle-container ul {
+      border: 1px solid #000;
+      border-radius: 100%;
+      position: absolute;
+      margin: auto;
+      padding: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 130px;
+      height: 130px;
+    }
+
+    #circle-container ul li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+    }
