@@ -5,43 +5,33 @@
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
-  <title>Platformer Example</title>
+  <title>Dots</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Thambi|Lato:300" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.4.0/velocity.ui.min.js"></script>
+  <script src="src/jquery.min.js" charset="utf-8"></script>
+  <script src="src/velocity.js" charset="utf-8"></script>
 </head>
 
 <body>
   <!-- <div class="loading-container"></div> -->
   <div class="main-container">
     <div class="title">
-      <h1>Connect the Dots</h1>
+      <h1>Dots.</h1>
+      <h2>Anthony Mejia</h2>
     </div>
     <div class="wrapper">
-
-      <div class="circles">
-        <ul class="dots">
-          <li class="dot"></li>
-          <li class="dot"></li>
-          <li class="dot"></li>
-          <li class="dot"></li>
-          <li class="dot"></li>
-        </ul>
-      </div>
-      <div class="circles">
-        <ul class="dots">
-          <li class="dot"></li>
-          <li class="dot"></li>
-          <li class="dot"></li>
-          <li class="dot"></li>
-          <li class="dot"></li>
-        </ul>
-      </div>
-      <div id="circle-container">
-        <div id="big-circle"></div>
-        <ul></ul>
+      <div id="big-circle">
+        <div class="controls">
+          <div id="control"></div>
+        </div>
+        <span class="number">0</span>
+        <div class="mini-circle-wrapper">
+          <span class="mini-circle"></span>
+        </div>
       </div>
     </div>
   </div>
