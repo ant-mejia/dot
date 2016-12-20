@@ -38,7 +38,11 @@
   </div>
   <script src="src/snowfall.jquery.js" charset="utf-8"></script>
   <script type="text/javascript">
-    $(document).snowfall();
+    $(document).snowfall({
+      round: true,
+      minSize: 3,
+      maxSize: 15
+    });
   </script>
   <script src="src/app.js"></script>
 </body>
