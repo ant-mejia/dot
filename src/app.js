@@ -48,7 +48,7 @@ let game = {
     }, {
       loop: true,
       easing: 'linear',
-      duration: 2000
+      duration: 1500
     });
     $('body').keydown(function(e) {
       if (spaceBarPressed(e)) {
