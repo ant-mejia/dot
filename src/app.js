@@ -6,11 +6,13 @@ function spaceBarPressed(e) {
 // Create a levels class object with
 class Level {
   constructor(num) {
-    this.num = num;
-    this.bgColor = '#' + (Math.random() * 0xFFFFFF << 0).toString(16);
+    this.level = num;
+    this.bgColor = "#000000".replace(/0/g, function() {
+      return (~~(Math.random() * 16)).toString(16);
+    });
   }
   render() {
-    game.updateText(this.num);
+    game.updateText(this.level);
     game.changeBackground(this.bgColor);
   }
   updateCircle() {
@@ -26,7 +28,7 @@ class Level {
 let game = {
   highScore: 0,
   progress: false,
-  currentLevel: 1,
+  currentLevel: 0,
   init: function() {
     $('#control').click(function(event) {
       console.log(event);
@@ -50,10 +52,10 @@ let game = {
     });
     $('body').keydown(function(e) {
       if (spaceBarPressed(e)) {
-        if (game.collisionDetect() === true) {
+        if (game.collisionDetect($('#control'), $('.mini-circle')) === true) {
           level.updateCircle();
           game.currentLevel++;
-          $('.number').text(game.currentLevel);
+          game.updateText(game.currentLevel);
         } else {
           game.endGame();
         }
@@ -68,12 +70,13 @@ let game = {
       backgroundColor: col
     });
   },
-  collisionDetect: function() {
-    if ($('#control').offset().left <= $('.mini-circle').offset().left && $('#control').offset().left + $('#control').innerWidth() >= $('.mini-circle').innerWidth()) {
-      return true;
-    } else {
-      return false;
-    }
+  collisionDetect: function($div1, $div2) {
+    if (($div1.offset().top + $div1.outerHeight(true)) < $div2.offset().top ||
+      $div1.offset().top > ($div2.offset().top + $div2.outerHeight(true)) ||
+      (($div1.offset().left + $div1.outerWidth(true)) < $div2.offset().left) ||
+      $div1.offset().left > ($div2.offset().left + $div2.outerWidth(true))) return false;
+    return true;
+
   },
   endGame: function() {
     $('.controls').velocity("stop");
@@ -103,4 +106,5 @@ let game = {
     });
   }
 };
+
 game.init();
