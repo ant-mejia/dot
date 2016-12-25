@@ -56,6 +56,12 @@ let game = {
           level.updateCircle();
           game.currentLevel++;
           game.updateText(game.currentLevel);
+          if (game.currentLevel % 10 === 0) {
+            console.log('divisible by 10');
+            game.changeBackground("#000000".replace(/0/g, function() {
+              return (~~(Math.random() * 16)).toString(16);
+            }));
+          }
         } else {
           game.endGame();
         }
