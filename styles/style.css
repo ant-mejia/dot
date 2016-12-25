@@ -39,8 +39,6 @@ body {
   height: 400px;
   border: 70px solid rgba(0, 0, 0, 0.5);
   border-radius: 100%;
-  -webkit-box-shadow: inset 0px -7px 5px rgba(0, 0, 0, 0.55);
-  box-shadow: inset 0px -7px 5px rgba(0, 0, 0, 0.55);
   display: table;
   position: relative;
 }
